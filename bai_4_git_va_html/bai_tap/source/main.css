@@ -1,0 +1,22 @@
+html {
+    box-sizing: border-box;
+    margin: 0 50px;
+}
+
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 45px 0;
+    border-bottom: 2px solid black;
+    background-color: #ffcc00;
+}
+
+.information {
+    margin-left: 20px;
+}
+
+.name {
+    text-align: center;
+}
