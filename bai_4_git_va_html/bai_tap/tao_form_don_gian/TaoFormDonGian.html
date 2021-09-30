@@ -7,7 +7,8 @@
 </head>
 <body>
 <div class="container">
-    <form action="">
+<!--    Tạo form với các trường-->
+    <form class="form1" action="">
         <h2 class="heading">SỞ THÍCH CỦA BẠN</h2>
         <p>Họ và tên <input class="name" size="50" type="text" name="yourname" placeholder="Your Name"></p>
         <p>Email<input class="email" type="text" name="email" placeholder="Your Email"></p>
@@ -26,6 +27,38 @@
             <input type="button" name="resetform" value="Nhập lại">
         </div>
     </form>
+<!--    Tạo form đăng ký học viên-->
+    <form class="form2" action="">
+        <h2 class="form2__heading">ĐĂNG KÝ HỌC VIÊN</h2>
+        <p>Họ và tên <input class="form2__name" size="50" type="text" name="yourname" placeholder="Your Name"></p>
+        <p>Ngày sinh<input class="form2__dob" type="text" name="email" placeholder="Your Email"></p>
+        <p>Giới tính
+                <input class="form2__sex-select" name="sex" type="radio" id="nam">Nam
+                <input class="form2__sex-select" name="sex" type="radio" id="nu">Nữ
+        </p>
+        <p>Địa chỉ
+            <textarea name="address" id="address" cols="30" rows="5"></textarea>
+        </p>
+        <p>Lớp
+            <select name="class" id="class">
+                <option value="class__selection">--Chọn lớp--</option>
+                <option value="class">C0921G1</option>
+                <option value="class">C1021G2</option>
+            </select>
+        </p>
+        <p>Email
+            <input class="form2__email" type="text" name="form2__email">
+        </p>
+        <p>Điện thoại
+            <input class="form2__tel" type="text" name="form2__telnum">
+        </p>
+        <div class="form2__complete_form">
+            <input type="button" name="register" value="Đăng ký">
+            <input type="button" name="reset" value="Nhập lại">
+        </div>
+    </form>
 </div>
+
+
 </body>
 </html>

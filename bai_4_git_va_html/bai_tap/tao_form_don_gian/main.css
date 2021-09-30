@@ -51,3 +51,47 @@ span {
     position: relative;
     top: -20px;
 }
+/*Form 2*/
+
+.form2__heading {
+    color: blue;
+    background-color: palegreen;
+    height: 50px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+
+.form2__name {
+    margin-left: 20px;
+}
+
+.form2__dob {
+    margin-left: 20px;
+}
+
+input.form2__sex-select {
+    margin-left: 22px;
+}
+
+textarea {
+    margin-left: 32px;
+}
+
+select {
+    margin-left: 50px;
+}
+
+.form2__email {
+    margin-left: 38px;
+}
+
+.form2__tel {
+    margin-left: 10px;
+}
+
+.form2__complete_form {
+    margin-left: 80px;
+}
