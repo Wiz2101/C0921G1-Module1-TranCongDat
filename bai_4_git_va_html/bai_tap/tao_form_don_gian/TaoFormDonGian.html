@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo Form Đơn Giản</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="container">
+    <form action="">
+        <h2 class="heading">SỞ THÍCH CỦA BẠN</h2>
+        <p>Họ và tên <input class="name" size="50" type="text" name="yourname" placeholder="Your Name"></p>
+        <p>Email<input class="email" type="text" name="email" placeholder="Your Email"></p>
+        <p>Sở thích</p>
+        <div class="hobby">
+            <input class="hobby_item" type="checkbox" name="hobby" value=""><span>Thể thao</span>
+            <input class="hobby_item" type="checkbox" name="hobby"><span>Đọc sách</span>
+            <input class="hobby_item" type="checkbox" name="hobby"><span>Âm nhạc</span> <br>
+            <input class="hobby_item" type="checkbox" name="hobby"><span>Lướt web</span>
+            <input class="hobby_item" type="checkbox" name="hobby"><span>Chơi game</span>
+            <input class="hobby_item" type="checkbox" name="hobby"><span>Điện ảnh</span> <br>
+            <input class="hobby_item" type="checkbox" name="hobby"><span>Du lịch</span>
+        </div>
+        <div class="complete_form">
+            <input type="button" name="submitform" value="Gửi thông tin">
+            <input type="button" name="resetform" value="Nhập lại">
+        </div>
+    </form>
+</div>
+</body>
+</html>

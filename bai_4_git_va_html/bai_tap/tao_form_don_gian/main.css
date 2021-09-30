@@ -1,0 +1,53 @@
+.container {
+    width: 1200px;
+    max-width: 100%;
+}
+
+.heading {
+    background-color: orangered;
+    color: white;
+    height: 50px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+
+p {
+    color: blue;
+}
+
+form {
+    border: 2px solid black;
+    width: 500px;
+}
+.name {
+    margin-left: 20px;
+}
+
+.email {
+    margin-left: 48px;
+}
+
+.hobby {
+    position: relative;
+    top: -40px;
+    margin-left: 66px;
+    color: darkorange;
+}
+
+.hobby_item {
+    margin: 10px 20px;
+}
+
+span {
+    display: inline-block;
+    width: 80px;
+}
+
+.complete_form {
+    margin-left: 80px;
+    position: relative;
+    top: -20px;
+}
