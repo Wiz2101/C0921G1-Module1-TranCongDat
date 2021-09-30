@@ -53,6 +53,9 @@ span {
 }
 /*Form 2*/
 
+.form2 {
+    margin-top: 50px;
+}
 .form2__heading {
     color: blue;
     background-color: palegreen;
