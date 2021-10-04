@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+<h1>Calculator</h1>
+<input id="value1" type="text" size="20">
+<input id="value2" type="text" size="20">
+<br>
+<br>
+<button onclick="addFunc()" id="addition" value="+">Addition(+)</button>
+<button onclick="subFunc()" id="subtraction" value="-">Subtraction(-)</button>
+<button onclick="mulFunc()" id="mulplication" value="*">Mulplication(*)</button>
+<button onclick="divFunc()" id="division" value="/">Division(/)</button>
+
+<script>
+    let value1 = document.getElementById("value1");
+    let value2 = document.getElementById("value2");
+
+    function addFunc() {
+        let result = parseInt(value1.value) + parseInt(value2.value);
+        alert('Giá trị là:' + result);
+    }
+    function subFunc() {
+        let result = parseInt(value1.value) - parseInt(value2.value);
+        alert('Giá trị là:' + result);
+    }
+    function mulFunc() {
+        let result = parseInt(value1.value) * parseInt(value2.value);
+        alert('Giá trị là:' + result);
+    }
+    function divFunc() {
+        let result = parseInt(value1.value) / parseInt(value2.value);
+        alert('Giá trị là:' + result);
+    }
+</script>
+</body>
+</html>
