@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra năm nhuận</title>
+</head>
+<body>
+
+<script>
+    Cách 1:
+    let inputyear = prompt("Nhập năm vào đây: ");
+    year = parseInt(inputyear);
+    if (year % 4 === 0) {
+        if (year % 100 === 0) {
+            if (year % 400 === 0) {
+                alert (year + " là năm nhuận");
+            } else {
+                alert (year + " không phải là năm nhuận");
+            }
+        } else {
+            alert (year + " là năm nhuận");
+        }
+    } else {
+        alert (year + " không phải là năm nhuận");
+    }
+</script>
+</body>
+</html>
