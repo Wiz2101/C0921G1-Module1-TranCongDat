@@ -28,6 +28,8 @@
     <option>USD</option>
 </select>
 <button onclick="convert()">Convert</button>
+<br>
+<p id="output"></p>
 <script>
     var crrncy = {'VND': {'USD':0.000044},'USD': {'VND': 22758.31}};
     var inputfrom = document.getElementById('rate1');
@@ -42,7 +44,7 @@
             } else {
                 result = amount * crrncy[from][to];
             }
-        alert(result);
+        document.getElementById('output').innerText = "the result is " + result;
         }
 </script>
 </body>

@@ -14,6 +14,7 @@
 <button onclick="subFunc()" id="subtraction" value="-">Subtraction(-)</button>
 <button onclick="mulFunc()" id="mulplication" value="*">Mulplication(*)</button>
 <button onclick="divFunc()" id="division" value="/">Division(/)</button>
+<p id="output"></p>
 
 <script>
     let value1 = document.getElementById("value1");
@@ -21,19 +22,19 @@
 
     function addFunc() {
         let result = parseInt(value1.value) + parseInt(value2.value);
-        alert('Giá trị là:' + result);
+        document.getElementById("output").innerText = 'Giá trị phép toán là: ' + result;
     }
     function subFunc() {
         let result = parseInt(value1.value) - parseInt(value2.value);
-        alert('Giá trị là:' + result);
+        document.getElementById("output").innerText = 'Giá trị phép toán là: ' + result;
     }
     function mulFunc() {
         let result = parseInt(value1.value) * parseInt(value2.value);
-        alert('Giá trị là:' + result);
+        document.getElementById("output").innerText = 'Giá trị phép toán là: ' + result;
     }
     function divFunc() {
         let result = parseInt(value1.value) / parseInt(value2.value);
-        alert('Giá trị là:' + result);
+        document.getElementById("output").innerText = 'Giá trị phép toán là: ' + result;
     }
 </script>
 </body>
