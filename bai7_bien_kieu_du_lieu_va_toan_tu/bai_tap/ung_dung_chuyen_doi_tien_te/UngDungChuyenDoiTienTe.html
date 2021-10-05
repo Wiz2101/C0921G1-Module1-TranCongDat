@@ -7,6 +7,10 @@
         label {
             margin: 0 10px;
         }
+
+        button {
+            margin: 0 10px;
+        }
     </style>
 </head>
 <body>
@@ -25,23 +29,21 @@
 </select>
 <button onclick="convert()">Convert</button>
 <script>
-    let currncy = {'VND': {'USD':0.000044},'USD': {'VND': 22758.31}};
-    let from = document.getElementById('rate1');
-    let to = document.getElementById('rate2');
-    let amount = document.getElementById('amount')
+    var crrncy = {'VND': {'USD':0.000044},'USD': {'VND': 22758.31}};
+    var inputfrom = document.getElementById('rate1');
+    var inputto = document.getElementById('rate2');
+    var inputamount = document.getElementById('amount');
     function convert() {
-        try{
-            if (from == to){
+        var amount = inputamount.value;
+        var from = inputfrom.value;
+        var to = inputto.value;
+            if (from == to) {
                 result = amount;
             } else {
                 result = amount * crrncy[from][to];
             }
+        alert(result);
         }
-        catch(err) {
-            result = amount * (1 / crrncy[to][from]);
-        }
-    alert(result);
-
 </script>
 </body>
 </html>
