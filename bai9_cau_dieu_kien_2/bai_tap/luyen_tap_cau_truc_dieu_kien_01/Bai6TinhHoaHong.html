@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính hoa hồng</title>
+</head>
+<body>
+<h2 id="revenue"></h2>
+<h2 id="commision"></h2>
+<h1 id="result"></h1>
+<script>
+    let a = parseFloat(prompt('Nhập số tiền doanh thu'));
+    let b = parseFloat(prompt('Nhập tỉ lệ hoa hồng'));
+    if (a >= 0) {
+        let commission = a * b / 100;
+        document.getElementById('revenue').innerText = 'Doanh thu là: ' + a;
+        document.getElementById('commision').innerText = 'Tỉ lệ hoa hồng là: ' + b + '%';
+        document.getElementById('result').innerText = 'Số tiền hoa hồng nhận được là: ' + commission;
+    } else {
+        alert('Vui lòng nhập số tiền lớn hơn hoặc bằng 0');
+    }
+</script>
+</body>
+</html>

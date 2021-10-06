@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương trình tính giá điện</title>
+    <style>
+        * {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+<label>Số điện tiêu thụ (kWh): 
+    <input type="text" id="consume" placeholder="Nhập số kWh tiêu thụ">
+</label>
+<br>
+<br>
+<label>Loại điện sử dụng:
+    <select id="unit">
+        <option value="SH">Sinh Hoạt</option>
+        <option value="KD">Kinh Doanh</option>
+        <option value="SX">Sản Xuất</option>
+    </select>
+</label>
+<input type="submit" id="result" onclick="calc()">
+<h2 id="payment"></h2>
+<script>
+    let a = document.getElementById('consume');
+    let price = {'SH':2461,'KD':4687,'SX':3076};
+    let b = document.getElementById('unit');
+    function calc() {
+        let amount = a.value;
+        let type = b.value;
+        payment = amount * price[type];
+        document.getElementById('payment').innerText = 'Số tiền cần phải thanh toán là: ' + payment + ' VND';
+    }
+</script>
+</body>
+</html>

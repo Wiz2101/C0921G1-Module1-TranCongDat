@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính cước điện thoại</title>
+</head>
+<body>
+<h2 id="unit"></h2>
+<h2 id="time"></h2>
+<h1 id="total"></h1>
+<script>
+    let a = parseFloat(prompt('Nhập đơn giá'));
+    let b = parseFloat(prompt('Nhập thòi gian gọi (đơn vị Giây)'));
+    if (a >= 0) {
+        if (b >= 0) {
+            total = (a / 60) * b;
+            document.getElementById('unit').innerText = 'Đơn giá là: ' + a + ' đồng';
+            document.getElementById('time').innerText = 'Thời gian gọi: ' + b + ' giây';
+            document.getElementById('total').innerText = 'Số tiền là: ' + total + ' đồng';
+        } else {
+            alert('Vui lòng nhập giá trị "thời gian" lớn hơn hoặc bằng 0');
+        }
+    } else {
+        alert('Vui lòng nhập giá trị "đơn giá" lớn hơn hoặc bằng 0');
+    }
+</script>
+</body>
+</html>

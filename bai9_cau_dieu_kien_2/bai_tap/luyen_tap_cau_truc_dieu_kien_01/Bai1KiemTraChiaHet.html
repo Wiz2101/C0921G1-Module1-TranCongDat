@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra chia hết</title>
+</head>
+<body>
+<h3 id="a"></h3>
+<h3 id="b"></h3>
+<h2 id="result"></h2>
+<script>
+    let a = parseInt(prompt('Nhập số a: '));
+    let b = parseInt(prompt('Nhập số b: '));
+    if (b % a === 0) {
+        document.getElementById('a').innerText = 'Số a là:' + a;
+        document.getElementById('b').innerText = 'Số b là: ' + b;
+        document.getElementById('result').innerText = a + ' chia hết cho ' + b;
+    } else {
+        document.getElementById('a').innerText = 'Số a là:' + a;
+        document.getElementById('b').innerText = 'Số b là: ' + b;
+        document.getElementById('result').innerText = a + ' không chia hết cho ' + b;
+    }
+</script>
+</body>
+</html>

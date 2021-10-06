@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xếp loại học sinh</title>
+</head>
+<body>
+<h2 id="average"></h2>
+<h1 id="result"></h1>
+<script>
+    let a = parseFloat(prompt('Nhập điểm bài kiểm tra'));
+    let b = parseFloat(prompt('Nhập điểm bài thi'));
+    let c = parseFloat(prompt('Nhập điểm bài thi cuối kỳ'));
+    ave = parseFloat((a + b * 2 + c * 3 ) / 6);
+    if (ave >= 9) {
+        document.getElementById('average').innerText = 'Điểm trung bình: ' + ave;
+        document.getElementById('result').innerText = 'Học sinh đạt loại Xuất Sắc';
+    } else if (ave >= 8) {
+        document.getElementById('average').innerText = 'Điểm trung bình: ' + ave;
+        document.getElementById('result').innerText = 'Học sinh đạt loại Giỏi';
+    } else if (ave >= 6.5) {
+        document.getElementById('average').innerText = 'Điểm trung bình: ' + ave;
+        document.getElementById('result').innerText = 'Học sinh đạt loại Khá';
+    } else if (ave >=5) {
+        document.getElementById('average').innerText = 'Điểm trung bình: ' + ave;
+        document.getElementById('result').innerText = 'Học sinh đạt loại Trung Bình';
+    } else if (ave >=3.5) {
+        document.getElementById('average').innerText = 'Điểm trung bình: ' + ave;
+        document.getElementById('result').innerText = 'Học sinh đạt loại Yếu';
+    } else {
+        document.getElementById('average').innerText = 'Điểm trung bình: ' + ave;
+        document.getElementById('result').innerText = 'Học sinh đạt loại Kém';
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra cạnh tam giác</title>
+</head>
+<body>
+<h2 id="ainput"></h2>
+<h2 id="binput"></h2>
+<h2 id="cinput"></h2>
+<h1 id="result"></h1>
+<script>
+    let a = parseFloat(prompt('Nhập cạnh a'));
+    let b = parseFloat(prompt('Nhập cạnh b'));
+    let c = parseFloat(prompt('Nhập cạnh c'));
+    document.getElementById('ainput').innerText = 'Giá trị a nhập là: ' + a;
+    document.getElementById('binput').innerText = 'Giá trị b nhập là: ' + b;
+    document.getElementById('cinput').innerText = 'Giá trị c nhập là: ' + c;
+    if (a,b,c > 0) {
+        if (a + b > c) {
+            if (b + c > a) {
+                if (a + c > b) {
+                    document.getElementById('result').innerText = 'Đây là một tam giác';
+                } else {
+                    document.getElementById('result').innerText = 'Đây không phải là một tam giác';
+                }
+            } else {
+                document.getElementById('result').innerText = 'Đây không phải là một tam giác';
+            }
+        } else {
+            document.getElementById('result').innerText = 'Đây không phải là một tam giác';
+        }
+    } else {
+        document.getElementById('result').innerText = 'Đây không phải là một tam giác';
+    }
+</script>
+</body>
+</html>

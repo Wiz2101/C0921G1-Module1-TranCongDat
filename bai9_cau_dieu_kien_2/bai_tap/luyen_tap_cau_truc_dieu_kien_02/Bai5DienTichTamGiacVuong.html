@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện tích tam giác vuông</title>
+</head>
+<body>
+<h2 id="side1"></h2>
+<h2 id="side2"></h2>
+<h1 id="result"></h1>
+<script>
+    let a = parseFloat(prompt('Nhập giá trị cạnh a'));
+    let b = parseFloat(prompt('Nhập giá trị cạnh b'));
+    document.getElementById('side1').innerText = 'Giá trị cạnh a là: ' + a + ' cm';
+    document.getElementById('side2').innerText = 'Giá trị cạnh b là: ' + b + ' cm';
+    area = parseFloat(a * b / 2);
+    document.getElementById('result').innerText = 'Diện tích tam giác vuông là: ' + area + ' cm2';
+</script>
+</body>
+</html>

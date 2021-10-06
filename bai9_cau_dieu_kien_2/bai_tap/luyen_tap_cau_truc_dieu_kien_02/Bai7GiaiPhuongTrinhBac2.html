@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 2</title>
+</head>
+<body>
+<h2 id="formular"></h2>
+<h2 id="delta"></h2>
+<h1 id="result"></h1>
+<script>
+    //a^2x + bx + c = 0
+    let a = parseInt(prompt('Nhập giá trị a:'));
+    let b = parseInt(prompt('Nhập giá trị b:'));
+    let c = parseInt(prompt('Nhập giá trị c:'));
+    delta = parseInt(b**2 - (4 * a * c));
+    document.getElementById('formular').innerText = 'Phương trình: ' + a + 'x^2 + ' + b + 'x + ' + c + ' = 0';
+    document.getElementById('delta').innerText = 'Delta = ' + delta;
+    if (delta < 0) {
+        document.getElementById('result').innerText = 'Phương trình có vô số nghiệm';
+    } else if (delta === 0) {
+        x = -b/2*a;
+        document.getElementById('result').innerText = 'Phương trình có nghiệm kép là: ' + x;
+    } else {
+        x1 = (-b + Math.sqrt(delta))/2*a;
+        x2 = (-b - Math.sqrt(delta))/2*a;
+        document.getElementById('result').innerText = 'Phương trình có 2 nghiệm là: x1 = ' + x1 + ' x2 = ' + x2;
+    }
+</script>
+</body>
+</html>

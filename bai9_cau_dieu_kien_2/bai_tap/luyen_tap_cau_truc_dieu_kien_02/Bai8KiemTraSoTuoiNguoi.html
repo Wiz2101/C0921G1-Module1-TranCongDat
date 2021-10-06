@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số tuổi người</title>
+</head>
+<body>
+<h2 id="input"></h2>
+<h1 id="result"></h1>
+<script>
+    let a = parseInt(prompt('Nhập số tuổi'));
+    document.getElementById('input').innerText = 'Số tuổi nhập: ' + a;
+
+    if (a >= 0) {
+        if (a < 120) {
+            document.getElementById('result').innerText = 'Đây là số tuổi của một người'
+        } else {
+            document.getElementById('result').innerText = 'Đây không phải là số tuổi của một người'
+        }
+    } else {
+        alert('Vui lòng nhập số tuổi là số dương');
+    }
+</script>
+</body>
+</html>
