@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính thuế thu nhập cá nhân</title>
+</head>
+<body>
+<label>Nhập số tiền lương hằng tháng của bạn:</label>
+<input type="text" id="amount">
+<br>
+<br>
+<label>Nhập số người bạn đang chu cấp: </label>
+<input type="text" id="people">
+<br>
+<br>
+<input type="submit" value="Tính thuế" onclick="calc()">
+<h1 id="result"></h1>
+<script>
+    let inputsalary = document.getElementById('amount');
+    let inputpeople = document.getElementById('people');
+    function calc() {
+        let salary = inputsalary.value;
+        let people = inputpeople.value;
+        exempt = 4400000 * people;
+        taxIncome = salary - 11000000 - exempt;
+        if (taxIncome > 0) {
+            if (taxIncome <= 5000000) {
+                taxPayable = taxIncome * 0.05;
+                document.getElementById('result').innerText = 'Số tiền thuế phải nộp là: ' + taxPayable.toLocaleString() + ' VND';
+            } else if (taxIncome <= 10000000) {
+                taxPayable = taxIncome * 0.1;
+                document.getElementById('result').innerText = 'Số tiền thuế phải nộp là: ' + taxPayable.toLocaleString() + ' VND';
+            } else if (taxIncome <= 18000000) {
+                taxPayable = taxIncome * 0.15;
+                document.getElementById('result').innerText = 'Số tiền thuế phải nộp là: ' + taxPayable.toLocaleString() + ' VND';
+            } else if (taxIncome <= 32000000) {
+                taxPayable = taxIncome * 0.2;
+                document.getElementById('result').innerText = 'Số tiền thuế phải nộp là: ' + taxPayable.toLocaleString() + ' VND';
+            } else if (taxIncome <= 52000000) {
+                taxPayable = taxIncome * 0.25;
+                document.getElementById('result').innerText = 'Số tiền thuế phải nộp là: ' + taxPayable.toLocaleString() + ' VND';
+            } else if (taxIncome <= 80000000) {
+                taxPayable = taxIncome * 0.3;
+                document.getElementById('result').innerText = 'Số tiền thuế phải nộp là: ' + taxPayable.toLocaleString() + ' VND';
+            } else {
+                taxPayable = taxIncome * 0.35;
+                document.getElementById('result').innerText = 'Số tiền thuế phải nộp là: ' + taxPayable.toLocaleString() + ' VND';
+            }
+        } else {
+            document.getElementById('result').innerText = 'Bạn không phải nộp thuế thu nhập cá nhân';
+        }
+    }
+</script>
+</body>
+</html>

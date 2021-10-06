@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lãi suất ngân hàng</title>
+</head>
+<body>
+<label>Số tiền gửi tiết kiệm: </label>
+<input id="money" type="text" placeholder="Nhập số tiền gửi tiết kiệm">
+<br>
+<br>
+<label>Kỳ hạn vay: </label>
+<input id="time" type="text" placeholder="Nhập số tháng gửi tiết kiệm">
+<br>
+<br>
+<label>Lãi suất: </label>
+<input id="interest" type="text" placeholder="Nhập lãi suất: ">
+<br>
+<br>
+<input type="submit" value="Tính Lãi Suất" onclick="result()">
+<h1 id="result"></h1>
+<script>
+    let money = document.getElementById('money');
+    let time = document.getElementById('time');
+    let interest = document.getElementById('interest');
+
+    function calc () {
+        let tienGoc = money.value;
+        let thoiGianVay = time.value;
+        let laiSuat = interest.value;
+        result ();
+    }
+
+    //Tính tiền gốc hằng tháng
+    function tinhTienGoc() {
+        let tienGoc = money.value;
+        let thoiGianVay = time.value;
+        var tienGocHangThang;
+        return tienGocHangThang = tienGoc / thoiGianVay;
+
+    }
+
+    //Tính tiền lãi hằng tháng
+    function tinhTienLai() {
+        let laiSuat = interest.value;
+        let gocConLai = money.value;
+        let tienLaiHangThang;
+        return tienLaiHangThang = gocConLai * (laiSuat / 100) / 12;
+    }
+
+    //Tính toán
+    function result() {
+        let tienGoc = money.value;
+        let thoiGianVay = time.value;
+        let tienGocConLai = tienGoc;
+        let gocHangThang = tinhTienGoc();
+        let tongTienPhaiTra = 0;
+        let tongTienLai = 0;
+        for (i=1; i<=thoiGianVay;i++) {
+            let laiHangThang = tinhTienLai();
+            let tienPhaiTraHangThang = laiHangThang + gocHangThang;
+            tienGocConLai = tienGocConLai - gocHangThang;
+            tongTienPhaiTra += gocHangThang;
+            tongTienLai += laiHangThang;
+            document.getElementById('result').innerText = "Tiền phải trả hằng tháng: " + tienPhaiTraHangThang.toLocaleString();
+        }
+    }
+    
+</script>
+</body>
+</html>
