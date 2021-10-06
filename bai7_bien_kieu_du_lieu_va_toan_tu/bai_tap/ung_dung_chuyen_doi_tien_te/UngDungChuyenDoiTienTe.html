@@ -32,19 +32,19 @@
 <p id="output"></p>
 <script>
     var crrncy = {'VND': {'USD':0.000044},'USD': {'VND': 22758.31}};
-    var inputfrom = document.getElementById('rate1');
-    var inputto = document.getElementById('rate2');
-    var inputamount = document.getElementById('amount');
+    var inputFrom = document.getElementById('rate1');
+    var inputTo = document.getElementById('rate2');
+    var inputAmount = document.getElementById('amount');
     function convert() {
-        var amount = inputamount.value;
-        var from = inputfrom.value;
-        var to = inputto.value;
+        var amount = inputAmount.value;
+        var from = inputFrom.value;
+        var to = inputTo.value;
             if (from == to) {
                 result = amount;
             } else {
                 result = amount * crrncy[from][to];
             }
-        document.getElementById('output').innerText = "the result is " + result;
+        document.getElementById('output').innerText = "The result is " + result;
         }
 </script>
 </body>
