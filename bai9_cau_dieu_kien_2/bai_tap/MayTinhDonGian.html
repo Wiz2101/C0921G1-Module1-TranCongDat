@@ -18,6 +18,7 @@
             border-collapse: collapse;
             width: 25%;
         }
+
         button {
             width: 100px;
             height: 100px;
@@ -29,59 +30,81 @@
 </head>
 <body>
 <div class="calculation">
-        <div class="container">
-            <table width="600px" height="800px">
-                <tr>
-                    <td colspan="4"><div style="width: 130px; height: 20px; border: 1px solid black" class="display"></td>
-                </tr>
-                <tr>
-                    <td><button id="num1">1</button></td>
-                    <td><button id="num2">2</button></td>
-                    <td><button id="num3">3</button></td>
-                    <td><button id="plus">+</button></td>
-                </tr>
-                <tr>
-                    <td><button id="num4">4</button></td>
-                    <td><button id="num5">5</button></td>
-                    <td><button id="num6">6</button></td>
-                    <td><button id="minus">-</button></td>
-                </tr>
-                <tr>
-                    <td><button id="num7">1</button></td>
-                    <td><button id="num8">2</button></td>
-                    <td><button id="num9">3</button></td>
-                    <td><button id="multi">*</button></td>
-                </tr>
-                <tr>
-                    <td><button id="reset">C</button></td>
-                    <td><button id="num0">0</button></td>
-                    <td><button id="result">=</button></td>
-                    <td><button id="div">/</button></td>
-                </tr>
-            </table>
-        </div>
+    <div class="container">
+        <table width="600px" height="800px">
+            <tr>
+                <td colspan="4"><input type="text" id="window" size="100"></td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="num1" value="1"  onclick="nhap(this.value)">1</button>
+                </td>
+                <td>
+                    <button id="num2" value="2" onclick="nhap(this.value)">2</button>
+                </td>
+                <td>
+                    <button id="num3" value="3" onclick="nhap(this.value)">3</button>
+                </td>
+                <td>
+                    <button id="plus" value="+" onclick="nhap(this.value)">+</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="num4" value="4" onclick="nhap(this.value)">4</button>
+                </td>
+                <td>
+                    <button id="num5" value="5" onclick="nhap(this.value)">5</button>
+                </td>
+                <td>
+                    <button id="num6" value="6" onclick="nhap(this.value)">6</button>
+                </td>
+                <td>
+                    <button id="minus" value="-" onclick="nhap(this.value)">-</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="num7" value="7" onclick="nhap(this.value)">7</button>
+                </td>
+                <td>
+                    <button id="num8" value="8" onclick="nhap(this.value)">8</button>
+                </td>
+                <td>
+                    <button id="num9" value="9" onclick="nhap(this.value)">9</button>
+                </td>
+                <td>
+                    <button id="multi" value="*" onclick="nhap(this.value)">*</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="reset" onclick="xoa()">C</button>
+                </td>
+                <td>
+                    <button id="num0" value="0" onclick="nhap(this.value)">0</button>
+                </td>
+                <td>
+                    <button id="result" onclick="tinhKetQua()">=</button>
+                </td>
+                <td>
+                    <button id="div" onclick="nhap(this.value)">/</button>
+                </td>
+            </tr>
+        </table>
     </div>
 </div>
+</div>
 <script>
-    let num1 = parseInt(document.getElementById('num1').value);
-    let num2 = parseInt(document.getElementById('num2').value);
-    let num3 = parseInt(document.getElementById('num3').value);
-    let plus = parseInt(document.getElementById('plus').value);
-    let num4 = parseInt(document.getElementById('num4').value);
-    let num5 = parseInt(document.getElementById('num5').value);
-    let num6 = parseInt(document.getElementById('num6').value);
-    let minus = parseInt(document.getElementById('minus').value);
-    let num7 = parseInt(document.getElementById('num7').value);
-    let num8 = parseInt(document.getElementById('num8').value);
-    let num9 = parseInt(document.getElementById('num9').value);
-    let multi = parseInt(document.getElementById('multi').value);
-    let reset = parseInt(document.getElementById('reset').value);
-    let num0 = parseInt(document.getElementById('num0').value);
-    let result = parseInt(document.getElementById('result').value);
-    let div = parseInt(document.getElementById('div').value);
-    function addition() {
-
-
+    function nhap(so) {
+        document.getElementById('window').value += so;
+    }
+    function tinhKetQua() {
+        let bieuThuc = document.getElementById('window').value;
+        document.getElementById('window').value = eval(bieuThuc);
+    }
+    function xoa() {
+        document.getElementById('window').value = '';
     }
 </script>
 </body>

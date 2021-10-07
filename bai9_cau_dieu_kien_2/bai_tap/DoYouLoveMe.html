@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do you love me?</title>
+</head>
+<body>
+<h1>Do You Love Me?</h1>
+<button id="yes" onclick="display()">Yes</button>
+<button id="no" onmouseover="moveOut()" style="position: relative">No</button>
+<h1 id="result"></h1>
+<script>
+    function display() {
+        document.getElementById('result').innerText = "<3"
+    }
+
+    function moveOut() {
+        let randomHeight = Math.round(Math.random() * window.innerHeight);
+        let randomWidth = Math.round(Math.random() * window.innerWidth);
+        document.getElementById("no").style.top =  randomHeight +'px';
+        document.getElementById("no").style.left =  randomWidth +'px';
+    }
+</script>
+</body>
+</html>
