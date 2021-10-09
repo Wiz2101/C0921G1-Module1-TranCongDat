@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let previousNum = 0;
+    let nextNum = 1;
+    let result = 0;
+    let count = 1;
+    while (count < 20) {
+        let sum;
+        sum = previousNum + nextNum; //1, 2, 3, 5,
+        previousNum = nextNum; // 1, 1, 2, 3,
+        nextNum += previousNum; // 2, 3, 5, 8
+        nextNum = sum; //1, 2, 3, 5
+        result += previousNum; // 1, 2, 4, 7
+        count++;
+    }
+    document.writeln(result);
+</script>
+</body>
+</html>

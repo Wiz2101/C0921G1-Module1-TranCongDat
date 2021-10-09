@@ -7,15 +7,14 @@
 <body>
 <script>
     let temperature = prompt('Nhập nhiệt độ');
-    while (temperature > 100 && temperature < 0) {
+    while (temperature > 100 || temperature < 0) {
         if (temperature > 100) {
             alert('Vui lòng hạ nhiệt độ');
             temperature = prompt('Nhập nhiệt độ');
-        } else {
+        } else if (temperature < 0){
             alert('Vui lòng tăng nhiệt độ');
             temperature = prompt('Nhập nhiệt độ');
-        }
-        if (temperature > 0 && temperature < 100) {
+        } else {
             break;
         }
     }

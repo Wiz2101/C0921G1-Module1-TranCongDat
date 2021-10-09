@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Hãy đoán thử</h1>
+<h2>Bắt đầu chơi</h2>
+<input type="button" value="Chơi" onclick="numInput()">
+<input type="button" value="Chơi lại" onclick="window.location.reload()">
+<script>
+    function numInput() {
+        let min = parseInt(prompt('Nhập số nhỏ nhất'));
+        let max = parseInt(prompt('Nhập số lớn nhất'));
+        let answer = parseInt(prompt('Nhập số bạn đoán'));
+        let result = Math.round(Math.random() * (max - min) + min);
+        while (answer <= max) {
+            if (answer < result) {
+                alert('Bạn đoán thấp hơn đáp án');
+                answer = parseInt(prompt('Nhập số bạn đoán'));
+            } else if (answer > result) {
+                alert('Bạn đoán cao hơn đáp án');
+                answer = parseInt(prompt('Nhập số bạn đoán'));
+            } else {
+                alert('Chúc mừng bạn đã đoán chính xác!!');
+                break;
+            }
+        }
+    }
+</script>
+</body>
+</html>
