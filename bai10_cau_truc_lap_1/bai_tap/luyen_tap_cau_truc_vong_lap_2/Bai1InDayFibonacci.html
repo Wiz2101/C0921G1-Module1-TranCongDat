@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let previousNum = 0;
+    let nextNum = 1;
+    let count = parseInt(prompt('Nhập số lượng số đầu tiên muốn hiển thị trong dãy Fibonacci:'));
+    i = 0;
+    while (i < count) {
+        let sum
+        document.writeln(previousNum + "<br>"); // 0, 1, 1, 2,3,
+        sum = previousNum + nextNum; // 1, 2, 3, 5,
+        previousNum = nextNum; // 1, 1, 2, 3,
+        nextNum += previousNum; // 2, 3, 5, 8
+        nextNum = sum; // 1, 2, 3, 5,
+        i++;
+    }
+</script>
+</body>
+</html>
