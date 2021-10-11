@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let h = 5;
+    for (let i = 6; i >= 0; i--) {
+        if (i < 6) {
+            for (let j = 2 * h - 1; j >= 1; j--) {
+                if (Math.abs(h - j) <= i) {
+                    document.writeln(' * ');
+                } else {
+                    document.writeln('&nbsp&nbsp');
+                }
+            }
+        } else {
+            for (let j = 2 * h - 1; j >= 1; j--) {
+                if (Math.abs(h - j) > 0 && Math.abs(h - j) < 4) {
+                    document.writeln(' * ');
+                } else {
+                    document.writeln('&nbsp&nbsp');
+                }
+            }
+        }
+            document.writeln('<br>');
+        }
+
+    // for (let i=1; i<=5; i++){
+    //     for(let j = 1; j < 2 * 5; j++) {
+    //         if(Math.abs(5 - j) <= (i - 1)) {
+    //             document.writeln(" * ");
+    //         } else {
+    //             document.writeln(" - ");
+    //         }
+    //     }
+    //     document.writeln("<br>");
+    // }
+</script>
+</body>
+</html>
