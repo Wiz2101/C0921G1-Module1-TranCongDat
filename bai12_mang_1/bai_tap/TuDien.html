@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let word = prompt('Nhập từ cần tra');
+    let eng = ["dog", "cat", "house", "programmer"];
+    let vnm = ["chó", "mèo", "nhà", "lập trình viên"];
+    let result = [];
+    let flag = false;
+    for (let i = 0; i < eng.length; i++) {
+        if (word === eng[i]) {
+            flag = true;
+            result = vnm [i];
+            document.write(word + " có nghĩa là: " + result);
+            break;
+        }
+    }
+    if (!flag) {
+        document.write('Không tìm thấy trong từ điển');
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let x = [];
+    let amount = parseInt(prompt('Nhấp số lượng phần tử'));
+    x.length = amount;
+    let flag = false;
+    let SNT = "";
+    if (amount > 0 && amount < 20) {
+        flag = true;
+    }
+    if (!flag) {
+        do {
+            amount = parseInt(prompt('Nhấp số lượng phần tử'));
+            if (amount > 0 && amount < 20) {
+                x.length = amount;
+                break;
+            }
+        } while (!flag);
+    }
+    for (let i = 0; i < x.length; i++) {
+        x[i] = prompt('Nhập giá trị' + i);
+    }
+    console.log(x);
+    for (let j = 0; j < x.length; j++) {
+        let check = true;
+        for (let k = 2; k < x[j]; k++) {
+            if (x[j] % k === 0) {
+                check = false;
+                break;
+            }
+        }
+        if (check) {
+            SNT += x[j];
+            console.log(SNT);
+        }
+    }
+    document.write('Dãy số nguyên tố: ' + SNT);
+</script>
+</body>
+</html>

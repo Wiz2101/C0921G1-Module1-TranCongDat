@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numStr = prompt('Nhập số yêu thích'); //  1224
+    let result = [numStr[0]]; // 12-2
+    for (let i=1; i<numStr.length; i++) {
+        if ((numStr[i-1] % 2 === 0)&&(numStr[i] % 2 ===0)){
+            result.push('-',numStr[i]);
+        } else {
+            result.push(numStr[i]);
+        }
+    }
+    document.write(result.join(''));
+</script>
+</body>
+</html>
