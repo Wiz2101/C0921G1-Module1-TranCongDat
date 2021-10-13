@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let maxlength = prompt('Nhập độ dài mảng');
+    let count = 0;
+    for (let i=0; i<maxlength; i++) {
+        let value = prompt('Nhập giá trị cho phần tử ' + i);
+        arr.push(value);
+        console.log('Mảng arr là: ' + arr.join(' '));
+    }
+    for (let j=0; j<arr.length; j++){
+        if(arr[j]>=0 && arr[j]<9){
+            count++;
+        }
+    }
+    document.write('Số ký tự số trong mảng là: ' + count);
+
+    
+</script>
+</body>
+</html>

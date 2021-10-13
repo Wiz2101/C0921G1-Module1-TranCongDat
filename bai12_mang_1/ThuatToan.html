@@ -26,18 +26,21 @@
     for (let i = 0; i < x.length; i++) {
         x[i] = prompt('Nhập giá trị' + i);
     }
-    console.log(x);
     for (let j = 0; j < x.length; j++) {
         let check = true;
-        for (let k = 2; k < x[j]; k++) {
-            if (x[j] % k === 0) {
-                check = false;
-                break;
+        console.log(x[j]);
+        if (x[j] >= 2) {
+            for (let k = 2; k < x[j]; k++) {
+                if (x[j] % k === 0) {
+                    check = false;
+                    break;
+                }
             }
+        } else {
+            j++;
         }
         if (check) {
             SNT += x[j];
-            console.log(SNT);
         }
     }
     document.write('Dãy số nguyên tố: ' + SNT);

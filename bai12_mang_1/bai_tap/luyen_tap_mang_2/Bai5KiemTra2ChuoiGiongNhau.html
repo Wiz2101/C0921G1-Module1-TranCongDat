@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr1 = [2, 5, 7, 4, 6, 11, 'chin', 13, 'tam', 10]
+    let arr2 = [7, 4, 11, 'chin', 13, 'tam', 2, 10, 6, 5]
+    let count = 0;
+    if (arr1.length === arr2.length){
+        for (let i = 0; i < arr1.length; i++) {
+            for (let j = 0; j < arr2.length; j++) {
+                if (arr1[i] === arr2[j]) {
+                    count++;
+                    break;
+                }
+            }
+        }
+    } else {
+        document.write('Hai chuỗi này không giống nhau');
+    }
+    if (count === arr1.length && count === arr2.length){
+        document.write('Hai chuỗi này giống nhau');
+    } else {
+        document.write('Hai chuỗi này không giống nhau');
+    }
+</script>
+</body>
+</html>

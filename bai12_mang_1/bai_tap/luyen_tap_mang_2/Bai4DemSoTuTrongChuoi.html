@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let maxlength = prompt('Nhập độ dài mảng');
+    let count = 0;
+    for (let i=0; i<maxlength; i++) {
+        let value = prompt('Nhập giá trị cho phần tử ' + i);
+        arr.push(' ');
+        arr.push(value);
+    }
+    document.write('Chuỗi nhập vào là: ' + arr.join(' ') + '<br>');
+    for (let j=0; j<arr.length; j++){
+        if (arr[j] === ' ' && arr[j+1] !== ' '){
+           count++;
+        }
+    }
+    document.write('Số từ trong chuỗi là: ' + count);
+</script>
+</body>
+</html>
