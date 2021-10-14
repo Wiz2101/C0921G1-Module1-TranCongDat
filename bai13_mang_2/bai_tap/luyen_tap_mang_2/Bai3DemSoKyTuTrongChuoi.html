@@ -15,13 +15,13 @@
         console.log('Mảng arr là: ' + arr.join(' '));
     }
     for (let j=0; j<arr.length; j++){
-        if(arr[j]>=0 && arr[j]<9){
+        if(arr[j]>=0 || arr[j]<0){
             count++;
         }
     }
     document.write('Số ký tự số trong mảng là: ' + count);
 
-    
+
 </script>
 </body>
 </html>
