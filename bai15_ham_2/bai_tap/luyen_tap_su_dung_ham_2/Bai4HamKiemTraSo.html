@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let typeInput;
+    do {
+        typeInput = prompt('Nhập vào giá trị muốn kiểm tra. Nhập "exit" để thoát');
+        if (typeInput !== 'exit') {
+            alert(checkNumber(typeInput));
+        }
+    } while (!(typeInput === "exit"));
+
+
+    function checkNumber(value) {
+        if (isNaN(value)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>
+</body>
+</html>

@@ -44,6 +44,38 @@
         }
     }
     document.write('Dãy số nguyên tố: ' + SNT);
+
+//    Cách giải của thầy
+    let n;
+    let array=[];
+    do {
+        n=prompt("nhập độ dài của mảng");
+    }while (!(0<n&&n<20&&parseInt(n)==n))
+
+    alert("độ dài của mảng: "+ n)
+    for (let i=0;i<n;i++){
+        array.push(prompt("nhập vào phần tử thứ "+i));
+    }
+
+    for (let i=0;i<n;i++){
+        if (ktSNT(array[i])){
+            document.write(array[i]+",");
+        }
+    }
+
+    function ktSNT(so) {
+        if (so >= 2) {
+            // kiểm tra SNt
+            for (let i = 2; i < so; i++) {
+                if (so % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
 </script>
 </body>
 </html>

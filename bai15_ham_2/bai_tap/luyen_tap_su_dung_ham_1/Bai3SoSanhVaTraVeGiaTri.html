@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function kiemTra(num1, num2) {
+        if (num1 > num2) {
+            return 'Đối số 1 lớn hơn Đối số 2';
+        } else {
+            let result = num1 + num2;
+            return result;
+        }
+    }
+
+    let num1 = parseFloat(prompt('Nhập số thứ 1:'));
+    let num2 = parseFloat(prompt('Nhập số thứ 2:'));
+    alert(kiemTra(num1,num2));
+</script>
+</body>
+</html>

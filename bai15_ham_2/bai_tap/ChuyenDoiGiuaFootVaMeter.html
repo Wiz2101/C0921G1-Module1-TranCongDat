@@ -5,14 +5,40 @@
     <title>Title</title>
 </head>
 <body>
+<h1>Convert between Foot and Meter</h1>
+<input id="input" type="number" placeholder="Input Value" oninput="convert1(this.value)">
+<select name="" id="selection" onchange="convert(this.value)">
+    <option value="1">ft to m</option>
+    <option value="2">m to ft</option>
+</select>
+<p><span id="result"></span></p>
 <script>
-    function footToMeter(foot){
-        let meter = 0.305 * foot;
+    function convert1(input) {
+        if (document.getElementById('selection').value === '1') {
+            footToMeter(input);
+        } else {
+            meterToFoot(input);
+        }
     }
 
-    function meterToFoot(meter){
-        let foot = 3.279 * meter;
+    function convert(value) {
+        if (value === '1') {
+            footToMeter(document.getElementById('input').value);
+        } else {
+            meterToFoot(document.getElementById('input').value);
+        }
     }
+
+    function footToMeter(foot) {
+        let meter = 0.305 * foot;
+        document.getElementById('result').innerText = foot + 'ft = ' + meter + 'm';
+    }
+
+    function meterToFoot(meter) {
+        let foot = 3.279 * meter;
+        document.getElementById('result').innerText = meter + 'm = ' + foot + 'ft';
+    }
+
 </script>
 </body>
 </html>

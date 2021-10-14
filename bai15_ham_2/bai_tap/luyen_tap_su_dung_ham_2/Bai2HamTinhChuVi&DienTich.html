@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let banKinh = prompt('Nhập bán kính hình tròn');
+    document.write('Chu vi hình tròn là: ' + circleArea(banKinh) + ' cm' + '<br>');
+    document.write('Diện tích hình tròn là: ' + circleCircumference(banKinh) + ' cm2');
+    function circleArea(number) {
+        let result = Math.PI*(number**2);
+        return result.toFixed(2);
+    }
+    
+    function circleCircumference(number) {
+        let result = Math.PI*2*number;
+        return result.toFixed(2);
+    }
+</script>
+</body>
+</html>
