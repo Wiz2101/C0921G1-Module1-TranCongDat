@@ -12,7 +12,8 @@
 <h2>Display All Product</h2>
 <p id="product_display"></p>
 <script>
-    let productList = ['iPhone', 'Samsung', 'Oppo'];
+    let productList = ['iPhone', 'Samsung', 'Oppo', 'A', 'LG'];
+    arrange(productList);
     display(productList);
 
     function display(array) {
@@ -39,6 +40,7 @@
         let newProduct = document.getElementById('product').value;
         productList.push(newProduct);
         document.getElementById('product').value = "";
+        arrange(productList);
         display(productList);
     }
 
@@ -58,6 +60,7 @@
                 productList[index] = newEdit;
             }
         }
+        arrange(productList)
         display(productList);
     }
 
@@ -70,22 +73,23 @@
                     productSort.push(productList[i]);
                 }
             }
+            arrange(productSort);
             display(productSort);
         } else {
+            arrange(productSort);
             display(productList);
         }
     }
 
-    // function sort() {
-    //     let a = a.toLowerCase();
-    //     let b = b.toLowerCase();
-    //     if (a<b) {
-    //         return -1;
-    //     } else {
-    //         return 1;
-    //     }
-    //     return 0;
-    // }
+    function arrange(array) {
+        array.sort(function (s,t) {
+            let a = s.toLowerCase();
+            let b = t.toLowerCase();
+            if (a<b){return -1}
+            if (a>b){return 1}
+            return 0;
+        })
+    }
 
 </script>
 </body>
