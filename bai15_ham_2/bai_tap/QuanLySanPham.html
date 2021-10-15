@@ -63,12 +63,20 @@
 
     function search(value) {
         value = document.getElementById('product').value;
-        for (let i = 0; i < productList.length; i++) {
-            if (productList[i].toLowerCase().includes(value.toLowerCase())) {
-                    productList = productList[i].toString();
+        let productSort = productList;
+        if (value !== "") {
+            productList = [];
+            for (let i = 0; i < productSort.length; i++) {
+                if (productSort[i].toLowerCase().includes(value.toLowerCase())) {
+                    productList.push(productSort[i]);
                 }
             }
-        display();
+            display()
+            return productSort;
+        } else {
+            productList = productSort;
+            display();
+        }
     }
 
 </script>
