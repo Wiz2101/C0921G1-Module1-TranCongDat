@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    do {
+        number = parseInt(prompt('Nhập vào giá trị cần kiếm tra'));
+    } while (isNaN(number));
+    alert(kiemTraNguyenDuong(number));
+    function kiemTraNguyenDuong (num){
+        if (num >= 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
+</body>
+</html>

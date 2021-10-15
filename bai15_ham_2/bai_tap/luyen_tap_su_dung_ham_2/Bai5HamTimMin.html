@@ -6,9 +6,20 @@
 </head>
 <body>
 <script>
-    function checkMin(num1,num2,num3) {
-        if (num1 < num2 && num1 < num3){
-            
+
+    let number1 = parseInt(prompt('Nhập số thứ 1 '));
+    let number2 = parseInt(prompt('Nhập số thứ 2 '));
+    let number3 = parseInt(prompt('Nhập số thứ 3 '));
+
+    alert(checkMin(number1,number2,number3));
+
+    function checkMin(num1, num2, num3) {
+        if (num1 < num2 && num1 < num3) {
+            return num1;
+        } else if (num2 < num3) {
+            return num2;
+        } else {
+            return num3;
         }
     }
 </script>

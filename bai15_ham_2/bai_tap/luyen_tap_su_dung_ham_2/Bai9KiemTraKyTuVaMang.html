@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let size;
+    do {
+        size = parseInt(prompt('Nhập vào độ dài mảng'));
+    } while (isNaN(size));
+    let arr = Array(size);
+    for (let i=0; i<size; i++){
+        arr[i] = prompt('Nhập phần tử thứ ' + i);
+    }
+    let sym = prompt('Nhập ký tụ cần so sánh');
+    if (kiemTra(arr,sym) !== -1){
+        document.write('Mảng nhập vào: ' + arr + '<br>');
+        document.write('Ký tự so sánh: ' + sym + '<br>');
+        document.write('Số lần lặp kí tự: ' + kiemTra(arr,sym));
+    } else {
+        document.write('Ký tự so sánh không có trong mảng' + '<br>');
+        document.write('Ký tự so sánh: ' + sym + '<br>');
+        document.write('Số lần lặp kí tự: ' + kiemTra(arr,sym));
+    }
+
+    function kiemTra(arr,sym) {
+        let count = 0;
+        for (let i=0; i<arr.length; i++) {
+            if (sym === arr[i]) {
+                count++;
+            }
+        }
+        if (count === 0){
+            return -1;
+        } else {
+            return count;
+        }
+    }
+</script>
+</body>
+</html>

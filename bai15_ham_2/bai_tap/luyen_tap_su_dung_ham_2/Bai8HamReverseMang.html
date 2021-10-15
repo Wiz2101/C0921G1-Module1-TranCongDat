@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let size;
+    do {
+        size = parseInt(prompt('Nhập vào độ dài mảng'));
+    } while (isNaN(size));
+    let arr = Array(size);
+    for (let i=0; i<size; i++){
+        arr[i] = prompt('Nhập phần tử thứ ' + i);
+    }
+    document.write('Mảng ban đầu: ' + arr + '<br>');
+    document.write('Mảng sau khi reverse: ' + reverseArr(arr));
+
+    function reverseArr(array){
+        array.reverse();
+        return array;
+    }
+
+</script>
+</body>
+</html>

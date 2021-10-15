@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Add New Product</h2>
+<input type="text" id="product" placeholder="New Product">
+<input type="button" id="add_btn" value="Add" onclick="add()">
+<input type="button" id="search_btn" value="Search" onclick="search()">
+<h2>Display All Product</h2>
+<p id="product_display"></p>
+<script>
+    let productList = ['iPhone', 'Samsung', 'Oppo'];
+    display();
+
+    function display() {
+        let tableStr = '<table border="1" style="border-collapse: collapse">\n' +
+            '<tr>\n' +
+            '<th>No</th>\n' +
+            '<th>Product Name</th>\n' +
+            '<th>Edit</th>\n' +
+            '<th>Delete</th>\n' +
+            '\n' +
+            '</tr>'
+        for (let i = 0; i < productList.length; i++) {
+            tableStr += '<tr>\n' +
+                '<td>' + (i + 1) + '</td>\n' +
+                '<td>' + productList[i] + '</td>\n' +
+                '<td><input type="button" value="Edit" onclick="edit(' + i + ')"></td>\n' +
+                '<td><input type="button" value="Delete" onclick="del(' + i + ')"></td>\n' +
+                '</tr>'
+        }
+        document.getElementById('product_display').innerHTML = tableStr;
+    }
+
+    function add() {
+        let newProduct = document.getElementById('product').value;
+        productList.push(newProduct);
+        document.getElementById('product').value = "";
+        display();
+    }
+
+    function del(index) {
+        let askConfirm = confirm('Bạn có muốn xóa sản phẩm: ' + productList[index] + ' ra khỏi danh sách không?');
+        if (askConfirm) {
+            productList.splice(index, 1);
+        }
+        display();
+    }
+
+    function edit(index) {
+        let newEdit = prompt('Nhập giá trị cần chỉnh sửa');
+        let askConfirm = confirm('Bạn có muốn lưu thay đổi?');
+        if (newEdit !== null && newEdit !== "" && newEdit === '&nbsp') {
+            if (askConfirm) {
+                productList[index] = newEdit;
+            }
+        }
+        display();
+    }
+
+    function search(value) {
+        value = document.getElementById('product').value;
+        for (let i = 0; i < productList.length; i++) {
+            if (productList[i].toLowerCase().includes(value.toLowerCase())) {
+                    productList = productList[i].toString();
+                }
+            }
+        display();
+    }
+
+</script>
+</body>
+</html>
