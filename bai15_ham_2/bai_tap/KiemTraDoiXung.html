@@ -24,26 +24,26 @@
      * Cách không tối ưu (Vẫn đúng)
      * Chạy 2 vòng for sẽ khiến thuật toán phức tạp hơn
      */
-    // let arr = prompt('Nhập chuỗi cần kiểm tra');
-    // isPalindrome(arr);
-    // function isPalindrome(arr) {
-    //     let count = 0;
-    //     for (let i = 0; i < arr.length; i++) {
-    //         for (let j = 1; j < arr.length; j++) {
-    //             if (arr[0] === arr[arr.length - j]) {
-    //                 i++;
-    //                 j++;
-    //                 count++
-    //                 break;
-    //             }
-    //         }
-    //     }
-    //     if (count === (Math.ceil(arr.length / 2))){
-    //         document.write('Chuỗi đối xứng');
-    //     } else {
-    //         document.write('Chuỗi không đối xứng');
-    //     }
-    // }
+    let arr = prompt('Nhập chuỗi cần kiểm tra');
+    isPalindrome(arr);
+    function isPalindrome(arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 1; j < arr.length; j++) {
+                if (arr[0] === arr[arr.length - j]) {
+                    i++;
+                    j++;
+                    count++
+                    break;
+                }
+            }
+        }
+        if (count === (Math.ceil(arr.length / 2))){
+            document.write('Chuỗi đối xứng');
+        } else {
+            document.write('Chuỗi không đối xứng');
+        }
+    }
 
 </script>
 </body>
