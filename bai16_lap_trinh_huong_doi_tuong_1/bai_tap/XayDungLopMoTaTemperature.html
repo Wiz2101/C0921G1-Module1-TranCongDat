@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class temperature{
+        constructor(degree) {
+            this.degree = degree;
+        }
+
+        getDegree(degree){
+            return this.degree;
+        }
+
+        convertDegreeToFahrenheit(){
+            return (this.degree * 1.8)+32;
+        }
+        convertDegreeToKelvin(){
+            return this.degree + 273.15;
+        }
+    }
+
+    let degree = new temperature(25);
+    let degreeDisplay = degree.getDegree();
+    let fahrenheit = degree.convertDegreeToFahrenheit();
+    let kelvin = degree.convertDegreeToKelvin();
+    document.writeln('Độ C = ' + degreeDisplay + '<br>');
+    document.writeln('Độ F = ' + fahrenheit + '<br>');
+    document.writeln('Độ K = ' + kelvin);
+
+</script>
+</body>
+</html>

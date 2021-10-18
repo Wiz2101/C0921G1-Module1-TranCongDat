@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class mobile {
+        constructor(battery, compose, inbox, sent) {
+            this.battery = battery;
+            this.compose = compose;
+            this.inbox = inbox;
+            this.sent = sent;
+        }
+
+        statusOnOff() {
+            if (this.battery > 0) {
+                return true;
+            } else {
+                return true;
+            }
+        }
+
+        turnOn() {
+            return 'Điện thoại bật';
+        }
+        turnOff() {
+            return 'Điện thoại tắt';
+        }
+        charge(percentage) {
+            return this.battery + percentage;
+        }
+        composeSms(){
+            prompt('Nhập tin nhắn vào');
+        }
+        receiveSms(message){
+            this.inbox += message;
+            alert(this.inbox);
+        }
+        sendSms(message){
+            return this.sent + message;
+        }
+        afterUse(percentage){
+            return this.battery - percentage;
+        }
+    }
+
+    let nokia = new mobile(10,0,10,5);
+    nokia.statusOnOff();
+    if(statusOnOff()){
+       nokia.turnOn();
+    }
+</script>
+</body>
+</html>
