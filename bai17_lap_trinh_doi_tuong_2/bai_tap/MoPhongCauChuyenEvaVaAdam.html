@@ -12,7 +12,11 @@
         }
 
         decrease() {
-            this.apple--;
+            if (this.apple > 0) {
+                this.apple--;
+            } else {
+                this.apple = 0;
+            }
         }
 
         isEmpty() {
@@ -29,19 +33,25 @@
         }
     }
 
-    class human extends apple{
-        constructor(name, gender, weight) {
-            super(apple);
+    class human {
+        constructor(name, weight) {
             this.name = name;
-            this.gender = gender;
             this.weight = weight;
+        }
+
+        setApple(apple) {
+            this.apple = apple;
+        }
+
+        getApple() {
+            return this.apple.getWeight();
         }
 
         isMale() {
             if (this.gender === "male") {
-                console.log("male");
+                document.writeln(this.getName() + " :Male" + '<br>');
             } else {
-                console.log("female");
+                document.writeln(this.getName() + " :Female" + '<br>');
             }
         }
 
@@ -50,22 +60,19 @@
         }
 
         checkApple(apple) {
-            if (apple.getWeight > 0) {
-                console.log('Táo còn ' + apple.getWeight)
-            } else {
-                console.log('Táo đã hết')
-            }
+            return this.apple.getWeight();
         }
 
-        eat(apple) {
-            if (this.apple > 0) {
-                this.weight++;
-                this.apple.decrease();
+        eat() {
+            if(this.getApple() > 0){
+            this.weight++;
+            this.apple.decrease();
+
             }
         }
 
         say(text) {
-            console.log(text)
+            document.writeln(this.getName() + ': ' + text + '<br>');
         }
 
         getName() {
@@ -87,14 +94,23 @@
 
     }
 
-    let appleOri = new apple(10);
-    appleOri.getWeight();
-
-    let adam = new human('Adam', 'male', 70);
-    adam.checkApple();
-    adam.eat(appleOri);
-    adam.eat();
-
+    let adam = new human('Adam', 60);
+    adam.setGender('male');
+    adam.isMale();
+    let eva = new human('Eva', 45);
+    eva.setGender('female');
+    eva.isMale()
+    let apple1 = new apple(10);
+    adam.say('Hello Eva. Do you like an Apple?');
+    eva.say('Sure. I get one and you get one')
+    adam.setApple(apple1);
+    eva.setApple(apple1);
+    for (let i = 0; i < 10; i++) {
+        adam.eat();
+        document.write('Weight of Adam: ' + adam.getWeight() + '.' + ' The remain of the apple: ' + adam.checkApple() + '<br>');
+        eva.eat();
+        document.write('Weight of Adam: ' + eva.getWeight() + '.' + ' The remain of the apple: ' + eva.checkApple() + '<br>');
+    }
 
 </script>
 </body>

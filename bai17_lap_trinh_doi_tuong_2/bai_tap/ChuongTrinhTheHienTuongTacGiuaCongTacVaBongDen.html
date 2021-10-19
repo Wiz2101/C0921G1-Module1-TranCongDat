@@ -8,54 +8,52 @@
 <script>
     class switchButton {
         constructor() {
-            this.status = false;
-            this.lamp = electricLamp.status;
-        }
-
-        switchButton() {
-            for (let i = 0; i < 10; i++) {
-                this.status = !this.status;
-            }
         }
 
         switchOn() {
-            this.lamp = !this.status;
+            this.status = true;
+            document.writeln('Công tắc đèn bật' + '<br>');
+
         }
 
         switchOff() {
-            this.lamp = this.status;
+            this.status = false;
+            document.writeln('Công tắc đèn tắt' + '<br>');
         }
 
         connectToLamp(electricLamp) {
-            electricLamp = this.lamp;
+            this.electricLamp = electricLamp;
         }
     }
 
     class electricLamp {
-        constructor(electricLamp) {
-            this.status = electricLamp;
+        constructor() {
         }
-
+        statusLight(){
+            if(this.status){
+                document.writeln("Đèn bật" + '<br>');
+            } else {
+                document.writeln("Đèn tắt" + '<br>');
+            }
+        }
         turnOn() {
-            if (!this.status) {
-                console.log("Đèn bật");
-            }
+                this.status = true;
         }
-
         turnOff() {
-            if (this.status) {
-                console.log("Đèn tắt");
-            }
+                this.status = false;
         }
     }
-    switchButton();
+
     let congTac = new switchButton();
-    congTac.switchOn();
-    congTac.switchOff();
-    congTac.connectToLamp();
     let bongDen = new electricLamp();
-    bongDen.turnOff();
-    bongDen.turnOn();
+    for (let i=0; i<10; i++){
+        congTac.switchOn();
+        bongDen.turnOn();
+        bongDen.statusLight();
+        congTac.switchOff();
+        bongDen.turnOff()
+        bongDen.statusLight();
+    }
 </script>
 </body>
 </html>
