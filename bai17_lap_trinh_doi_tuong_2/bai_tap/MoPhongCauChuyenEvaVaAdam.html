@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class apple {
+        constructor(apple) {
+            this.apple = apple;
+        }
+
+        decrease() {
+            this.apple--;
+        }
+
+        isEmpty() {
+            if (this.apple > 0) {
+                console.log('Táo vẫn còn');
+            } else {
+                console.log('Táo đã hết');
+            }
+        }
+
+        getWeight() {
+            console.log(this.apple);
+            return this.apple;
+        }
+    }
+
+    class human extends apple{
+        constructor(name, gender, weight) {
+            super(apple);
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        isMale() {
+            if (this.gender === "male") {
+                console.log("male");
+            } else {
+                console.log("female");
+            }
+        }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+        checkApple(apple) {
+            if (apple.getWeight > 0) {
+                console.log('Táo còn ' + apple.getWeight)
+            } else {
+                console.log('Táo đã hết')
+            }
+        }
+
+        eat(apple) {
+            if (this.apple > 0) {
+                this.weight++;
+                this.apple.decrease();
+            }
+        }
+
+        say(text) {
+            console.log(text)
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getWeight() {
+            console.log(this.weight);
+            return this.weight;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+    }
+
+    let appleOri = new apple(10);
+    appleOri.getWeight();
+
+    let adam = new human('Adam', 'male', 70);
+    adam.checkApple();
+    adam.eat(appleOri);
+    adam.eat();
+
+
+</script>
+</body>
+</html>

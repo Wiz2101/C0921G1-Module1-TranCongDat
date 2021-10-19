@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+</head>
+<body>
+<div id="game"></div>
+<script>
+    class hero{
+        constructor(image,top,left,size,speed) {
+            this.image = image;
+            this.top = top;
+            this.left = left;
+            this.size = size;
+            this.speed = speed;
+        }
+
+        getHeroElement(){
+            return '<img width="'+ this.size + '"' +
+            ' height="'+ this.size + '"' +
+            ' src="' + this.image +'"' +
+            ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
+        }
+
+        moveRight(){
+            this.left += this.speed;
+        }
+        moveLeft(){
+            this.left -= this.speed;
+        }
+        moveDown(){
+            this.top += this.speed;
+        }
+        moveUp(){
+            this.top -= this.speed;
+        }
+
+    }
+
+    let hero1 = new hero('luffy.png', 20,30,200,50);
+    function start() {
+        if(hero1.left < window.innerWidth - hero1.size){
+            hero1.moveRight();
+        }
+        if(hero1.left === window.innerWidth - hero1.size){
+            hero1.moveDown();
+        }
+        document.getElementById('game').innerHTML = hero1.getHeroElement();
+        setTimeout(start, 500)
+    }
+
+    start();
+
+    // function Hero(image, top, left, size){
+    //     this.image = image;
+    //     this.top = top;
+    //     this.left = left;
+    //     this.size = size;
+    //
+    //     this.getHeroElement = function(){
+    //         return '<img width="'+ this.size + '"' +
+    //             ' height="'+ this.size + '"' +
+    //             ' src="' + this.image +'"' +
+    //             ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
+    //     }
+    //
+    //     this.moveRight = function(){
+    //         this.left += 20;
+    //         console.log('ok: ' + this.left);
+    //     }
+    //
+    // }
+    //
+    // var hero = new Hero('pikachu.png', 20, 30, 200);
+    //
+    // function start(){
+    //     if(hero.left < window.innerWidth - hero.size){
+    //         hero.moveRight();
+    //     }
+    //     document.getElementById('game').innerHTML = hero.getHeroElement();
+    //     setTimeout(start, 500)
+    // }
+    //
+    // start();
+</script>
+</body>
+</html>

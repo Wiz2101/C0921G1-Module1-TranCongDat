@@ -5,52 +5,109 @@
     <title>Title</title>
 </head>
 <body>
+<!--Iphone-->
+<!--<input type="text" id="iphone">-->
+<!--<input type="button" onclick="send('iphone')" value="Send">-->
+<!--<input type="button" onclick="display('iphone')" value="display"><br>-->
+<!--Nokia-->
+<!--<input type="text" id="nokia">-->
+<!--<input type="button" onclick="send('nokia')" value="Send">-->
+<!--<input type="button" onclick="display('nokia')" value="display"><br>-->
 <script>
     class mobile {
-        constructor(battery, compose, inbox, sent) {
-            this.battery = battery;
-            this.compose = compose;
-            this.inbox = inbox;
-            this.sent = sent;
+        constructor() {
+            this.battery = 100;
+            this.memoryCompose = "";
+            this.memoryInbox = [];
+            this.memorySent = [];
+            this.status = true; //mặc định khi khởi tạo là mở điện thoại
         }
 
-        statusOnOff() {
-            if (this.battery > 0) {
-                return true;
+        getStatusOnOff() {
+            if (this.status) {
+                console.log('Điện thoại đang Bật');
             } else {
-                return true;
+                console.log('Điện thoại đang Tắt');
+            }
+            this.status = !(this.status);
+        }
+
+        switchMobile() {
+            this.status = !this.status;
+        }
+
+        charge(percent) {
+            this.battery += percent;
+        }
+
+        compose(text) {
+            this.memoryCompose = text;
+        }
+
+        receiveSms(message) {
+            this.memoryInbox.push(message);
+        }
+
+        sendSms(mobile, message) {
+            this.compose(message);
+            this.memorySent.push(this.memoryCompose);
+            mobile.receiveSms(message);
+            this.memoryCompose = "";
+        }
+
+        displaySmsReceiving() {
+            for (let i = 0; i < this.memoryInbox.length; i++) {
+                console.log((1 + i) + "." + this.memoryInbox[i])
             }
         }
 
-        turnOn() {
-            return 'Điện thoại bật';
+        getSmsReceiving() {
+            let result = ""
+            for (let i = 0; i < this.memoryInbox.length; i++) {
+                result += (1 + i) + "." + this.memoryInbox[i];
+            }
+            return result;
         }
-        turnOff() {
-            return 'Điện thoại tắt';
-        }
-        charge(percentage) {
-            return this.battery + percentage;
-        }
-        composeSms(){
-            prompt('Nhập tin nhắn vào');
-        }
-        receiveSms(message){
-            this.inbox += message;
-            alert(this.inbox);
-        }
-        sendSms(message){
-            return this.sent + message;
-        }
-        afterUse(percentage){
-            return this.battery - percentage;
+
+        displaySmsSending() {
+            for (let i = 0; i < this.memorySent.length; i++) {
+                console.log((1 + i) + "." + this.memorySent[i]);
+            }
         }
     }
 
-    let nokia = new mobile(10,0,10,5);
-    nokia.statusOnOff();
-    if(statusOnOff()){
-       nokia.turnOn();
-    }
+
+    // viết chuonwng trình chạy cách 1: không sử dungj html
+    // Khởi tạo 2  đối tượng dt nokia và iphone
+    // 2 điện thoại gửi tin nhắn cho nhau.
+
+    let nokia = new mobile();
+    let iphone = new mobile();
+    nokia.sendSms(iphone, 'Xin chào Nokia');
+    iphone.displaySmsReceiving();
+    iphone.sendSms(nokia, 'Đã test thành công');
+    nokia.displaySmsReceiving();
+
+    // viết chương cách 2: dùng html
+    //     let nokia = new mobile();
+    //     let iphone = new mobile();
+    //     function send(mobile) {
+    //         if (mobile=='iphone'){
+    //             let message = document.getElementById("iphone").value;
+    //             iphone.sendSms(nokia,message);
+    //         }else {
+    //             let message = document.getElementById("nokia").value;
+    //             nokia.sendSms(iphone,message);
+    //         }
+    //
+    //     }
+    //     function display(mobile) {
+    //         if (mobile=='iphone'){
+    //             document.getElementById("iphone").value=iphone.getSmsReceiving();
+    //         }else {
+    //             document.getElementById("nokia").value=nokia.getSmsReceiving();
+    //         }
+    //     }
 </script>
 </body>
 </html>
