@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let arr = [
+    //     [11, 2, 4],
+    //     [4, 5, 6],
+    //     [10, 8, -12],
+    // ]
+    // diagonalDifference(arr);
+    //
+    // function diagonalDifference(arr) {
+    // Write your code here
+    //     let leftdiagonal = 0;
+    //     let rightdiagonal = 0;
+    //     for (let i = 0, j = arr.length - 1; i < arr.length; i++, j--) {
+    //         leftdiagonal = leftdiagonal + arr[i][i];
+    //         rightdiagonal = rightdiagonal + arr[i][j];
+    //     }
+    //     return Math.abs(leftdiagonal - rightdiagonal)
+    // }
+
+    //     for (let i = 0; i < arr.length; i++) {
+    //         for (let j = 0; j < arr.length; j++) {
+    //             if (i === j) {
+    //                 let sum1;
+    //                 sum1 += arr[i][j];
+    //             }
+    //         }
+    //     }
+    //     for (let i = 0; i < arr.length; i++) {
+    //         for (let j = arr.length; j > 0; j--) {
+    //             let sum2;
+    //             sum2 += arr[i][j];
+    //             break;
+    //         }
+    //     }
+    // }
+    //     alert(result);
+    let arr = [1,2,3,4,5]
+    miniMaxSum(arr);
+
+    // function miniMaxSum(arr) {
+    //     // Write your code here
+    //     let max = arr[0];
+    //     let min = arr[0];
+    //     let mini = 0;
+    //     let maxi = 0;
+    //     for (let i = 0; i < arr.length; i++) {
+    //         if (arr[i] > max) {
+    //             max = arr[i];
+    //         }
+    //     }
+    //     for (let i = 0; i < arr.length; i++) {
+    //         if (arr[i] < min) {
+    //             min = arr[i];
+    //         }
+    //     }
+    //     for (let i = 0; i < arr.length; i++) {
+    //         if (arr[i] !== max) {
+    //             mini += arr[i];
+    //         }
+    //     }
+    //     for (let i = 0; i < arr.length; i++) {
+    //         if (arr[i] !== min) {
+    //             maxi += arr[i];
+    //         }
+    //     }
+    // console.log(mini,maxi);
+    // }
+
+    function miniMaxSum(arr) {
+        // Write your code here
+        let mini = 0;
+        let maxi = 0
+        arr.sort(function (a,b) {
+            return a-b;
+        });
+        for (let i=0; i<arr.length-1; i++){
+            mini += arr[i];
+        }
+        for (let i=arr.length-1; i>arr.length-5; i--){
+            maxi += arr[i];
+        }
+        console.log(mini,maxi);
+    }
+
+
+</script>
+</body>
+</html>
