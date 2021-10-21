@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let h = 5;
+    for (let i=0; i<h; i++){
+        for (let j=2*h-1; j>0; j--) {
+            if (i < h - 1) {
+                if (Math.abs(h - j) === i) {
+                    document.writeln("*");
+                } else {
+                    document.writeln("&nbsp&nbsp");
+                }
+            } else {
+                document.writeln("*");
+            }
+        }
+        document.writeln("<br>")
+    }
+</script>
+</body>
+</html>

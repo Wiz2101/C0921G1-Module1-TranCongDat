@@ -41,8 +41,8 @@
     //     }
     // }
     //     alert(result);
-    let arr = [1,2,3,4,5]
-    miniMaxSum(arr);
+    // let arr = [1,2,3,4,5]
+    // miniMaxSum(arr);
 
     // function miniMaxSum(arr) {
     //     // Write your code here
@@ -72,23 +72,62 @@
     //     }
     // console.log(mini,maxi);
     // }
+    //
+    // function miniMaxSum(arr) {
+    //     // Write your code here
+    //     let mini = 0;
+    //     let maxi = 0
+    //     arr.sort(function (a,b) {
+    //         return a-b;
+    //     });
+    //     for (let i=0; i<arr.length-1; i++){
+    //         mini += arr[i];
+    //     }
+    //     for (let i=arr.length-1; i>arr.length-5; i--){
+    //         maxi += arr[i];
+    //     }
+    //     console.log(mini,maxi);
+    // }
 
-    function miniMaxSum(arr) {
-        // Write your code here
-        let mini = 0;
-        let maxi = 0
-        arr.sort(function (a,b) {
-            return a-b;
-        });
-        for (let i=0; i<arr.length-1; i++){
-            mini += arr[i];
+    // let arr=[0, 0, -1, 1, 1];
+    // plusMinus(arr);
+    // function plusMinus(arr) {
+    //     // Write your code here
+    //     let nega = 0;
+    //     let posi = 0;
+    //     let zero = 0;
+    //     for (let i=0; i<arr.length; i++){
+    //         if (arr[i]<0){
+    //             nega++;
+    //         } else if (arr[i]>0){
+    //             posi++;
+    //         } else {
+    //             zero++;
+    //         }
+    //     }
+    //     let negaratio = 0;
+    //     let posiratio = 0;
+    //     let zeroratio = 0;
+    //     negaratio = nega/arr.length;
+    //     posiratio = posi/arr.length;
+    //     zeroratio = zero/arr.length;
+    //     console.log(posiratio.toFixed(6),negaratio.toFixed(6),zeroratio.toFixed(6));
+    // }
+
+    function main(time){
+        let AMPM = s.slice(-2);
+        let timeArr = s.slice(0, -2).split(":");
+
+        if (AMPM === "AM" && timeArr[0] === "12") {
+            // catching edge-case of 12AM
+            timeArr[0] = "00";
+        } else if (AMPM === "PM") {
+            // everything with PM can just be mod'd and added with 12 - the max will be 23
+            timeArr[0] = (timeArr[0] % 12) + 12
         }
-        for (let i=arr.length-1; i>arr.length-5; i--){
-            maxi += arr[i];
-        }
-        console.log(mini,maxi);
+
+        return timeArr.join(":");
     }
-
 
 </script>
 </body>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let salary = parseInt(prompt("Nhập lương của nhân viên"));
+    let tax;
+    if (salary>15000000){
+        tax = salary*20/100;
+    } else if (salary>7000000){
+        tax = salary*10/100;
+    } else {
+        tax = salary*5/100;
+    }
+    document.writeln("Tiền thuế thu nhập của nhân viên là: " + tax.toLocaleString() + " VND");
+    document.writeln("<br>");
+    document.writeln("Số tiền lương ròng nhân viên nhận được là: " + (salary-tax).toLocaleString() + " VND");
+
+</script>
+</body>
+</html>

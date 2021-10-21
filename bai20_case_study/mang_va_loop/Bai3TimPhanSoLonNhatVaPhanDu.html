@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numerators = [5, 2, 5];
+    let denominators = [6, 3, 4];
+    numerators.sort(function (a, b) {     //5,5,2
+        return b - a
+    });
+    denominators.sort(function (a, b) {   //6,4,3
+        return b - a
+    });
+    let maxMod = 0;
+    for (let i = 0; i < numerators.length; i++) {
+        for (let j = 0; j < denominators.length; j++) {
+            if (numerators[i] > denominators[j] && (numerators[i] % denominators[j]) > maxMod) {
+                maxMod = (numerators[i] % denominators[j]);
+            }
+        }
+    }
+    document.writeln("Phép chia có phần dư lớn nhất là: " + maxMod + "<br>");
+
+    for (let j = 0; j < denominators.length; j++) {
+        if (denominators[j] <= numerators[0]) {
+            document.writeln("Phân số lớn nhất là: " + numerators[0] + "/" + denominators[j]);
+            break;
+        }
+    }
+
+
+    // let min = denominators[0];
+    // for (let i=0; i<numerators.length; i++){
+    //     if(numerators[i]>max){
+    //         max = numerators[i]
+    //     }
+    // }
+    // for (let i=0; i<denominators.length; i++){
+    //     if(denominators[i]<min){
+    //         min = denominators[i]
+    //     }
+    // }
+    //
+    // alert(max);
+    // alert(min);
+</script>
+</body>
+</html>
