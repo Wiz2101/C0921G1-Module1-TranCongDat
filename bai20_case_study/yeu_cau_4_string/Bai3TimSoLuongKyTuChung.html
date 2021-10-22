@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let s1 = "aabcc";   //'a','a',b,'c',c
+    let s2 = "adcaa";   //'a'dcaa,dc'a'a,d'c'a,d
+    let newS1 = s1.split("");
+    let newS2 = s2.split("");
+    let count = 0;
+    let commonSym = [];
+    for (let i=0; i<newS1.length; i++){
+        for (let j=0; j<newS2.length; j++){
+            if(newS1[i] === newS2[j]){
+                count++;
+                commonSym.push(newS1[i]);
+                newS2.splice(j,1);
+                break;
+            }
+        }
+    }
+    document.writeln("Hai chuỗi có " + count + " ký tự chung là: " + commonSym);
+</script>
+</body>
+</html>

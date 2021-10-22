@@ -13,6 +13,7 @@
     } while (!(str !== ""))
     convert(str);
     longestWord(str);
+
     function convert(str) {
         let newStr = str.split("");
         newStr[0].toUpperCase();
@@ -21,7 +22,7 @@
                 newStr[i] = newStr[i].toUpperCase()
             }
         }
-        document.writeln(newStr.join("") + "<br>");
+        document.writeln("Chuỗi nhập vào sau khi chuẩn hóa: " + newStr.join("") + "<br>");
     }
 
     function longestWord(str) {
@@ -29,14 +30,14 @@
         let longest = 0;
         let Word = "";
         for (let i = 0; i < newStr.length; i++) {
-            if (longest < newStr[i].length) {
+            if (longest <= newStr[i].length) {
                 console.log(newStr[i]);
                 longest = newStr[i].length;
                 console.log(longest);
-                Word += newStr[i];
+                Word += newStr[i] + ",";
             }
         }
-        document.writeln(Word);
+        document.writeln("Từ dài nhất trong chuỗi là: " + Word);
     }
 </script>
 </body>

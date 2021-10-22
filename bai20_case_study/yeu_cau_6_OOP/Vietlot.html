@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="Tự chọn" onclick="addNum()">
+<input type="button" value="Ngẫu nhiên" onclick="randomNum()">
+<input type="button" value="Quay số" onclick="quaySo()">
+<p id="ketQua"></p>
+<script>
+    class Vietlot {
+        constructor(num1, num2, num3, num4, num5, num6) {
+            this.num1 = num1
+            this.num2 = num2
+            this.num3 = num3
+            this.num4 = num4
+            this.num5 = num5
+            this.num6 = num6
+        }
+
+        getNum1() {
+            return this.num1;
+        }
+
+        getNum2() {
+            return this.num2;
+        }
+
+        getNum3() {
+            return this.num3;
+        }
+
+        getNum4() {
+            return this.num4;
+        }
+
+        getNum5() {
+            return this.num5;
+        }
+
+        getNum6() {
+            return this.num6;
+        }
+
+        setNum1(number) {
+            this.num1 = number;
+        }
+
+        setNum2(number) {
+            this.num2 = number;
+        }
+
+        setNum3(number) {
+            this.num3 = number;
+        }
+
+        setNum4(number) {
+            this.num4 = number;
+        }
+
+        setNum5(number) {
+            this.num5 = number;
+        }
+
+        setNum6(number) {
+            this.num6 = number;
+        }
+    }
+
+    function display() {
+        let tableString = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>Vé</th>\n' +
+            '        <th>Số 1</th>\n' +
+            '        <th>Số 2</th>\n' +
+            '        <th>Số 3</th>\n' +
+            '        <th>Số 4</th>\n' +
+            '        <th>Số 5</th>\n' +
+            '        <th>Số 6</th>\n' +
+            '    </tr>';
+
+        for (let i = 0; i < ticket.length; i++) {
+            tableString += '<tr>\n' +
+                '       <td>' + (i + 1) + '</td>\n' +
+                '       <td>' + 'Vé thứ ' + (i + 1) + '</td>\n' +
+                '       <td>' + ticket[i].getNum1() + '</td>\n' +
+                '       <td>' + ticket[i].getNum2() + '</td>\n' +
+                '       <td>' + ticket[i].getNum3() + '</td>\n' +
+                '       <td>' + ticket[i].getNum4() + '</td>\n' +
+                '       <td>' + ticket[i].getNum5() + '</td>\n' +
+                '       <td>' + ticket[i].getNum6() + '</td>\n' +
+                '    </tr>';
+        }
+        tableString += '</table>';
+        document.getElementById("ketQua").innerHTML = tableString;
+    }
+
+    function addNum() {
+        if (count <= 4) {
+            let num1 = parseInt(prompt("Nhập số 1:"));
+            let num2 = parseInt(prompt("Nhập số 2:"));
+            let num3 = parseInt(prompt("Nhập số 3:"));
+            let num4 = parseInt(prompt("Nhập số 4:"));
+            let num5 = parseInt(prompt("Nhập số 5:"));
+            let num6 = parseInt(prompt("Nhập số 6:"));
+            let newTicket = new Vietlot(num1, num2, num3, num4, num5, num6);
+            ticket.push(newTicket);
+            count++
+            display(ticket);
+        } else {
+            alert("Bạn chỉ được mua tối đa 4 vé");
+
+        }
+    }
+
+    function randomNum() {
+        if (count <= 4) {
+            let num1 = Math.floor(Math.random() * 100);
+            let num2 = Math.floor(Math.random() * 100);
+            let num3 = Math.floor(Math.random() * 100);
+            let num4 = Math.floor(Math.random() * 100);
+            let num5 = Math.floor(Math.random() * 100);
+            let num6 = Math.floor(Math.random() * 100);
+            let newTicket = new Vietlot(num1, num2, num3, num4, num5, num6);
+            ticket.push(newTicket);
+            count++;
+            display();
+        } else {
+            alert("Bạn chỉ được mua tối đa 4 vé");
+        }
+    }
+
+    function quaySo() {
+        let result1 = Math.floor(Math.random() * 100);
+        let result2 = Math.floor(Math.random() * 100);
+        let result3 = Math.floor(Math.random() * 100);
+        let result4 = Math.floor(Math.random() * 100);
+        let result5 = Math.floor(Math.random() * 100);
+        let result6 = Math.floor(Math.random() * 100);
+        for (let i = 0; i < ticket.length; i++) {
+            for (let j = 0; j < ticket[i].length; j++) {
+                if (
+                    result1 === ticket[i][j] &&
+                    result2 === ticket[i][j] &&
+                    result3 === ticket[i][j] &&
+                    result4 === ticket[i][j] &&
+                    result5 === ticket[i][j] &&
+                    result6 === ticket[i][j]) {
+                    alert("Chúc mừng bạn đã trúng giải Nhất");
+                } else if (
+                    result2 === ticket[i][j] &&
+                    result3 === ticket[i][j] &&
+                    result4 === ticket[i][j] &&
+                    result5 === ticket[i][j] &&
+                    result6 === ticket[i][j]) {
+                    alert("Chúc mừng bạn đã trúng giải Nhì");
+                } else if (
+                    result4 === ticket[i][j] &&
+                    result5 === ticket[i][j] &&
+                    result6 === ticket[i][j]) {
+                    alert("Chúc mừng bạn đã trúng giải Ba");
+                } else {
+                    alert("Chúc mừng bạn may mắn lần sau");
+                }
+            }
+        }
+    }
+
+    let ticket = [];
+    let count = 1;
+    display(ticket);
+    
+
+</script>
+</body>
+</html>

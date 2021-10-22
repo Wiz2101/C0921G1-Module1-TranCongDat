@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt("Nhập chuỗi");  //aaaabbaabb
+    let newStr = str.split("").sort(); // ab
+    for (let i = 0; i < newStr.length; i++) {
+        if (newStr[i] === newStr[i + 1]) {
+            newStr.splice(i,1);
+            i--;
+        }
+    }
+    alert(newStr);
+</script>
+</body>
+</html>

@@ -11,19 +11,21 @@
     let N = 2;
     let ketQua ="";
     while(count < numbers) {
-        let flag = true;
-        for (let i = 2; i < N; i++) {
-            if (N % i === 0) {
-                flag = false;
-                break;
+        if (N >= 2) {
+            let flag = true;
+            for (let i = 2; i < N; i++) {
+                if (N % i === 0) {
+                    flag = false;
+                    break;
+                }
             }
-        }
 
-        if (flag) {
-            ketQua += N +"<br>";
-            count++;
+            if (flag) {
+                ketQua += N + "<br>";
+                count++;
+            }
+            N++;
         }
-        N++;
     }
     document.write(ketQua);
 </script>
