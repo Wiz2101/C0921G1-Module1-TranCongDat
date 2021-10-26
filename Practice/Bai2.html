@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("Nhập tử 1"));
+    let b = parseInt(prompt("Nhập mẫu 1"));
+    let x = parseInt(prompt("Nhập tử 2"));
+    let y = parseInt(prompt("Nhập mẫu 2"));
+    taoPhanSo(a,b,x,y)
+    function taoPhanSo(tu1,mau1,tu2,mau2) {
+        document.writeln("Phân số nhập vào lần lượt là: " + "<br>");
+        document.writeln("Phân số 1: " + tu1 + "/" + mau1 + "<br>");
+        document.writeln("Phân số 2: " + tu2 + "/" + mau2 + "<br>");
+        let temp1 = tu1 * mau2;
+        let temp2 = tu2 * mau1;
+        if (temp1 === temp2){
+            document.writeln("Hai phân số: " + tu1 + "/" + mau1 + " và " + tu2 + "/" + mau2 + " bằng nhau");
+        } else {
+            document.writeln("Hai phân số: " + tu1 + "/" + mau1 + " và " + tu2 + "/" + mau2 + " không bằng nhau");
+        }
+    }
+</script>
+</body>
+</html>

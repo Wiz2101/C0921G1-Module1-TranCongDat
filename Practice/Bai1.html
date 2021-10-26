@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let size;
+    let input;
+    let arrA = [];
+    let arrB = [];
+    do {
+        size = parseInt(prompt("nhập độ dài mảng A"));
+    } while (!(parseInt(size) === size));
+
+    for (let i = 0; i < size; i++) {
+        do {
+            input = parseInt(prompt("Nhập số a"));
+            arrA.push(input);
+        } while (!(parseInt(input) === input && input <= 50)) ;
+    }
+
+    for (let i = 0; i < arrA.length; i++) {
+        if (kiemTraSNT(arrA[i])) {
+            arrB.push(arrA[i]);
+        }
+    }
+    document.writeln(arrA + "<br>");
+    document.writeln(arrB);
+
+    function kiemTraSNT(num) {
+        if (num >= 2) {
+            for (let i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="Thêm Sổ Tiết Kiệm mới" onclick="addNewSoTietKiem()">
+<input type="button" value="Edit" onclick="editSoTietKiem()">
+<input type="button" value="Delete" onclick="deleteSoTietKiem()">
+<p id="ketQua"></p>
+<script>
+    class soTietKiem {
+        constructor(maSo, loaiTietKiem, hoTenKhachHang, chungMinhNhanDan, ngayMoSo, soTienGui) {
+            this.maSo = maSo;
+            this.loaiTietKiem = loaiTietKiem;
+            this.hoTenKhachHang = hoTenKhachHang;
+            this.chungMinhNhanDan = chungMinhNhanDan;
+            this.ngayMoSo = ngayMoSo;
+            this.soTienGui = soTienGui;
+        }
+
+        getMaSo() {
+            return this.maSo;
+        }
+
+        getLoaiTietKiem() {
+            return this.loaiTietKiem;
+        }
+
+        getHoTenKhachHang() {
+            return this.hoTenKhachHang;
+        }
+
+        getChungMinhNhanDan() {
+            return this.chungMinhNhanDan;
+        }
+
+        getNgayMoSo() {
+            return this.ngayMoSo;
+        }
+
+        getSoTienGui() {
+            return this.soTienGui;
+        }
+
+        setMaSo(maSo) {
+            this.maSo = maSo;
+        }
+
+        setLoaiTietKiem(loaiTietKiem) {
+            this.loaiTietKiem = loaiTietKiem;
+        }
+
+        setHoTenKhachHang(hoTenKhachHang) {
+            this.hoTenKhachHang = hoTenKhachHang;
+        }
+
+        setChungMinhNhanDan(chungMinhNhanDan) {
+            this.chungMinhNhanDan = chungMinhNhanDan;
+        }
+
+        setNgayMoSo(ngayMoSo) {
+            this.ngayMoSo = ngayMoSo;
+        }
+
+        setSoTienGui(soTienGui) {
+            this.soTienGui = soTienGui;
+        }
+    }
+
+    function display(arraySoTietKiem) {
+        let tableString = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>Mã Số</th>\n' +
+            '        <th>Loại tiết kiệm</th>\n' +
+            '        <th>Họ và tên khách hàng</th>\n' +
+            '        <th>Số CMND</th>\n' +
+            '        <th>Ngày mở sổ</th>\n' +
+            '        <th>Số tiền gửi</th>\n' +
+            '    </tr>';
+
+        for (let i = 0; i < arraySoTietKiem.length; i++) {
+            tableString += '<tr>\n' +
+                '       <td>' + arraySoTietKiem[i].getMaSo() + '</td>\n' +
+                '       <td>' + arraySoTietKiem[i].getLoaiTietKiem() + '</td>\n' +
+                '       <td>' + arraySoTietKiem[i].getHoTenKhachHang() + '</td>\n' +
+                '       <td>' + arraySoTietKiem[i].getChungMinhNhanDan() + '</td>\n' +
+                '       <td>' + arraySoTietKiem[i].getNgayMoSo() + '</td>\n' +
+                '       <td>' + arraySoTietKiem[i].getSoTienGui() + '</td>\n' +
+                '    </tr>';
+        }
+        tableString += '</table>';
+        document.getElementById("ketQua").innerHTML = tableString;
+    }
+
+
+    function addNewSoTietKiem() {
+        let newMaSo;
+        let newLoaiTietKiem;
+        let newHoTenKhachHang;
+        let newChungMinhNhanDan;
+        let newNgayMoSo;
+        let newSoTienGui;
+        do {
+            newMaSo = prompt("Nhập mã sổ mới");
+        } while (!(newMaSo.length <= 5));
+        do {
+            newLoaiTietKiem = prompt("Nhập loại tiết kiệm");
+        } while (!(newLoaiTietKiem.length <= 10));
+        do {
+            newHoTenKhachHang = prompt("Nhập họ và tên khách hàng");
+        } while (!(newHoTenKhachHang.length <= 30));
+        do {
+            newChungMinhNhanDan = parseInt(prompt("Nhập mã số CMND"));
+        } while (!(parseInt(newChungMinhNhanDan) === newChungMinhNhanDan));
+        newNgayMoSo = prompt("Nhập ngày mở sổ");
+        do {
+            newSoTienGui = parseInt(prompt("Nhập số tiền gửi"));
+        } while (!(parseInt(newSoTienGui) === newSoTienGui));
+        let soTietKiem1 = new soTietKiem(newMaSo, newLoaiTietKiem, newHoTenKhachHang, newChungMinhNhanDan, newNgayMoSo, newSoTienGui);
+        soTietKiemList.push(soTietKiem1);
+        alert("Bạn đã thêm thành công một sổ tiết kiệm có mã sổ " + newMaSo)
+        display(soTietKiemList);
+    }
+
+    function editSoTietKiem() {
+        let maSo;
+        do {
+            maSo = prompt("Nhập số sổ tiết kiệm cần chỉnh sửa");
+        } while (!(isNaN(maSo)));
+        for (let i = 0; i < soTietKiemList.length; i++) {
+            if (maSo === soTietKiemList[i].getMaSo()) {
+                let newMaSo = prompt("Nhập mã sổ mới cần thay đổi");
+                let newLoaiTietKiem = prompt("Nhập loại tiết kiệm cần thay đổi");
+                let newHoTenKhachHang = prompt("Nhập họ và tên khách hàng cần thay đổi");
+                let newChungMinhNhanDan = prompt("Nhập mã số CMND cần thay đổi");
+                let newNgayMoSo = prompt("Nhập ngày mở sổ cần thay đổi");
+                let newSoTienGui = prompt("Nhập số tiền gửi cần thay đổi");
+                soTietKiemList[i].setMaSo(newMaSo);
+                soTietKiemList[i].setLoaiTietKiem(newLoaiTietKiem);
+                soTietKiemList[i].setHoTenKhachHang(newHoTenKhachHang);
+                soTietKiemList[i].setChungMinhNhanDan(newChungMinhNhanDan);
+                soTietKiemList[i].setNgayMoSo(newNgayMoSo);
+                soTietKiemList[i].setSoTienGui(newSoTienGui);
+            } else {
+                alert("Mã sổ " + maSo + " không có trong danh sách")
+            }
+        }
+        display(soTietKiemList);
+    }
+
+    function deleteSoTietKiem() {
+        let maSo;
+        do {
+            maSo = prompt("Nhập mã sổ cần xóa");
+        } while (!(isNaN(maSo)));
+        console.log(maSo);
+        for (let i = 0; i < soTietKiemList.length; i++) {
+            if (maSo === soTietKiemList[i].getMaSo()) {
+                confirm("Bạn có muốn xóa sổ tiết kiệm có mã số " + maSo)
+                {
+                    soTietKiemList.splice(i, 1);
+                    
+                }
+            }
+        }
+        display(soTietKiemList);
+    }
+
+    let soTietKiemList = [];
+    let soTietKiem1 = new soTietKiem("A101", "6 Tháng", "Trần Công Đạt", "1231231241", "25/10/2021", "80000000");
+    soTietKiemList.push(soTietKiem1);
+    display(soTietKiemList);
+</script>
+</body>
+</html>

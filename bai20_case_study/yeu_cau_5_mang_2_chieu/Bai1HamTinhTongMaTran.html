@@ -6,22 +6,16 @@
 </head>
 <body>
 <script>
-    // let m = prompt("Nhập độ dài mảng");
-    // let n = prompt("Nhập độ dài số phần tử trong mảng");
-    // let arr = [];
-    // for (let i=0; i<m; i++){
-    //     arr.push("[");
-    //     console.log(arr);
-    //     for (let j=0; j<n; j++){
-    //         let value = prompt("Nhập giá trị tại vị trí " + "[" + i + "][" + j + "]");
-    //         arr.push(value);
-    //     }
-    //     arr.push("]");
-    //     arr.join("");
-    //     console.log(arr);
-    //
-    // }
-    let arr = [[1,2,3],[4,5,6]];
+    let m = prompt("Nhập độ dài mảng");
+    let n = prompt("Nhập độ dài số phần tử trong mảng");
+    let arr = [];
+    for (let i=0; i<m; i++){
+        arr[i] = [];
+        for (let j=0; j<n; j++){
+            arr[i][j] = prompt("Nhập giá trị tại vị trí " + "[" + i + "][" + j + "]");
+        }
+        console.log(arr);
+    }
     sumEven(arr);
     function sumEven(arr) {
         let sum = 0;

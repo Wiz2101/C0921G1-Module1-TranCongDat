@@ -16,9 +16,9 @@
         "5. Nước lọc " +
         "6. Nước dừa " +
         "7. Thoát gọi món");
-    let order;
-    let quantity;
-    let total;
+    let order = 0;
+    let quantity = 0;
+    let total = 0;
     let nums = [1, 2, 3, 4, 5, 6];
     let price = ["10000", "25000", "20000", "20000", "15000", "30000"];
     do {
@@ -26,19 +26,15 @@
         for (let i = 0; i < nums.length; i++) {
             if (order === nums[i]) {
                 alert("Giá một đơn vị: " + price[i]);
-                total = price[i];
+                quantity = parseInt(prompt("Nhập số lượng"));
+                total += price[i] * quantity;
             } else if (order === 7) {
                 break;
             }
         }
-        quantity = parseInt(prompt("Nhập số lượng"));
-    } while (!(parseInt(order) === order && parseInt(quantity) === quantity && order > 0 && order <= 7))
-    if (order === 7) {
-        document.writeln('Cảm ơn bạn! Hẹn bạn lần sau')
-    } else {
-        total *= quantity;
-        document.writeln("Số tiền cần trả là: " + total.toLocaleString() + " VND");
-    }
+    } while (!(parseInt(order) === order && order === 7));
+    document.writeln()
+    document.writeln("Số tiền cần trả là: " + total.toLocaleString() + " VND");
 
 </script>
 </body>
